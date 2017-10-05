@@ -69,29 +69,11 @@
     </footer>
     <!-- /Footer -->
 
-
-    <!-- MMENU -->
-    <nav id="menu">
-        <ul>
-            <li><a href="#">home</a></li>
-            <li><a href="#about">about us</a></li>
-            <li><a href="#services">services</a></li>
-            <li><a href="#product">product</a></li>
-            <li><a href="#team">team</a></li>
-            <li><a href="#blog">blog</a>
-                <ul>
-                    <li><a href="blog-full-width.html">full width blog</a></li>
-                    <li><a href="blog-sidebar.html">sidebar blog</a></li>
-                </ul>
-            </li>
-            <li><a href="#contact">contact</a></li>
-        </ul>
-    </nav>
-    <!-- /#menu -->
-
 </div>
 <!-- /#wrapper -->
 <?php wp_footer(); ?>
+
+<?php if ( is_home() ) {?>
     <!-- Modernizr JS -->
     <script src="<?php echo get_template_directory_uri(); ?>/assets/js/modernizr-2.6.2.min.js"></script>
 
@@ -140,5 +122,57 @@
             }
         });
     </script>
+    <?php } else {?>
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="<?php echo get_template_directory_uri(); ?>/assets2/js/bootstrap.min.js">
+    </script>
+    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets2/js/hover-dropdown.js">
+    </script>
+    <script defer src="<?php echo get_template_directory_uri(); ?>/assets2/js/jquery.flexslider.js">
+    </script>
+    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets2/bxslider/jquery.bxslider.js">
+    </script>
+
+    <script src="<?php echo get_template_directory_uri(); ?>/assets2/js/jquery.easing.min.js">
+    </script>
+    <script src="<?php echo get_template_directory_uri(); ?>/assets2/js/link-hover.js">
+    </script>
+
+
+    <script src="<?php echo get_template_directory_uri(); ?>/assets2/js/wow.min.js">
+    </script>
+    <script>
+      wow = new WOW(
+        {
+          boxClass:     'wow',      // default
+          animateClass: 'animated', // default
+          offset:       0          // default
+        }
+      )
+        wow.init();
+    </script>
+    <script>
+    jQuery(document).ready(function ($) {
+    
+    var offset = 220;
+    var duration = 500;
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > offset) {
+        $('.back-to-top').fadeIn(duration);
+      } else {
+        $('.back-to-top').fadeOut(duration);
+      }
+    });
+
+    $('.back-to-top').click(function (event) {
+      event.preventDefault();
+      $('html, body').animate({scrollTop: 0}, 1000);
+      return false;
+    })
+
+
+  });
+    </script>
+    <?php }?>
 </body>
 </html>

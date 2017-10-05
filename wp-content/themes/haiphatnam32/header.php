@@ -16,7 +16,14 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,300,600,700' rel='stylesheet' type='text/css'>
 
-<?php wp_head(); ?>
+    <?php wp_head(); ?>
+<?php if ( is_home() == true ) { ?>
+
+
+<?php } else {?>
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+<?php }?>
 
     <!--[if lt IE 9]>
 <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -25,7 +32,10 @@
 <![endif]-->
 </head>
 <body <?php body_class(); ?> id="home" class="homepage main">
+<?php if ( is_home() == true ) { ?>
 <div class="loader"></div>
+<?php } ?>
+
 <div id="wrapper" class="hfeed">
   
         <ul id="info-scroll">
@@ -42,9 +52,11 @@
                 </a>
             </li>
         </ul>
-
+<?php if ( is_home() == true ) { ?>
         <?php get_template_part( 'templates/slider' ); ?>
         <?php get_template_part( 'templates/menu/home-menu' ); ?>
-
+<?php } else {
+        get_template_part( 'templates/others/head' );
+} ?>
         	<!-- main -->
         <div id="main" class="clearfix">

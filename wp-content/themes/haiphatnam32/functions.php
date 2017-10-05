@@ -96,12 +96,12 @@ add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
 
 
 function the_breadcrumb() {
-                echo '<ul id="crumbs">';
+                echo '<ol class="breadcrumb pull-right">';
         if (!is_home()) {
                 echo '<li><a href="';
                 echo get_option('home');
                 echo '">';
-                echo 'Home';
+                echo 'Trang chủ';
                 echo "</a></li>";
                 if (is_category() || is_single()) {
                         echo '<li>';
@@ -143,6 +143,7 @@ function ik_woocommerce_breadcrumbs() {
 
 //Load the theme CSS
 function theme_styles() {
+    if ( is_home() == true ) {
     //    <!-- Revolution css -->
     wp_enqueue_style( 'revolution', get_template_directory_uri() . '/assets/vendor/rs-plugin/css/settings.css');
     wp_enqueue_style( 'extralayer', get_template_directory_uri() . '/assets/vendor/rs-plugin/css/extralayer.css');
@@ -174,6 +175,30 @@ function theme_styles() {
     // wp_enqueue_style( '480',get_template_directory_uri() . '/assets/css/480.css');
     // wp_enqueue_style( '768',get_template_directory_uri() . '/assets/css/768.css');
     // wp_enqueue_style( '992',get_template_directory_uri() . '/assets/css/992.css');
+    } else {
+    //  <!-- Bootstrap css -->
+    wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets2/css/bootstrap.min.css');
+    wp_enqueue_style( 'theme', get_template_directory_uri() . '/assets2/css/theme.css');
+    wp_enqueue_style( 'bootstrap-reset', get_template_directory_uri() . '/assets2/css/bootstrap-reset.css');
+
+    //   <!--external css-->
+    wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/assets/vendor/font-awesome/css/font-awesome.min.css');
+    wp_enqueue_style( 'flexslider', get_template_directory_uri() . '/assets2/css/flexslider.css');
+    wp_enqueue_style( 'bxslider', get_template_directory_uri() . '/assets2/bxslider/jquery.bxslider.css');
+    wp_enqueue_style( 'animate', get_template_directory_uri() . '/assets2/css/animate.css');
+    
+    // <!-- Custom Style css -->
+    wp_enqueue_style( 'main', get_template_directory_uri() . '/assets2/css/style.css');
+    wp_enqueue_style( 'responsive', get_template_directory_uri() . '/assets2/css/style-responsive.css');
+
+    // wp_enqueue_style( '480',get_template_directory_uri() . '/assets/css/480.css');
+    // wp_enqueue_style( '768',get_template_directory_uri() . '/assets/css/768.css');
+    // wp_enqueue_style( '992',get_template_directory_uri() . '/assets/css/992.css');
+    }
+
+
+   
+    
 }
 //Load the theme JS
 function theme_js() {

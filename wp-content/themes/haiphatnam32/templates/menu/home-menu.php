@@ -1,5 +1,5 @@
 <header class="header-part">
-            <div id="home" class="wrapper">
+           
                 <!-- Fixed navbar -->
                 <div class="navi navbar-default" role="navigation">
                     <div class="container">
@@ -49,5 +49,5 @@
                     </div>
                 </div>
                 <!-- End of Nav -->
-            </div>
+          
         </header>

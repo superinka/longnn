@@ -20,7 +20,7 @@ class incart_breadcrumb_class {
 
         global $post, $options;
 
-        echo '<section class="cont_nav"><div class="cont_nav_inner"><p><a href="' . esc_url(home_url('/')) . '">' . __('<i class="fa fa-home" aria-hidden="true"></i> Home', 'incart-lite') . '</a>';
+        echo '<section class="cont_nav pull-right"><div class="cont_nav_inner"><p><a href="' . esc_url(home_url('/')) . '">' . __('<i class="fa fa-home" aria-hidden="true"></i> Home', 'incart-lite') . '</a>';
 
        
 
